@@ -1,0 +1,11 @@
+---
+- hosts: dev
+  become: yes
+  remote_user: bitnami
+  tasks:
+
+ #    - name: Make sure Apache is started now and at boot.
+ #     service: name=apache state=started enabled=yes
+
+    - name: start bitnami services presumable apache and mysqueal
+      shell: /opt/bitnami/ctlscript.sh restart
